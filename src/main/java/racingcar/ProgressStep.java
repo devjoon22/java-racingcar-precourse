@@ -9,8 +9,12 @@ public class ProgressStep {
         this.stepNumberString = stepNumberString;
     }
 
-    public boolean isCollectStepNumber() throws NumberFormatException {
-        Integer.parseInt(stepNumberString);
+    public boolean isCollectStepNumber() {
+        try {
+            Integer.parseInt(stepNumberString);
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException("[ERROR] 시도 횟수는 숫자여야 한다.");
+        }
 
         return true;
     }

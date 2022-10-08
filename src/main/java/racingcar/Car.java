@@ -12,7 +12,7 @@ public class Car {
 
     public boolean isCarNameCollect() {
         if (carName.length() > 5 ) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("[ERROR] 차 이름은 5자 이하입니다");
         }
 
         return true;
@@ -34,7 +34,7 @@ public class Car {
     }
 
     public String printStatusString() {
-        return carName + ":" + MoveDistanceString();
+        return carName + " : " + MoveDistanceString();
     }
 
     public int getMoveDistance() {

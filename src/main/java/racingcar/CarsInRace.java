@@ -1,5 +1,6 @@
 package racingcar;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -8,16 +9,27 @@ import java.util.stream.Collectors;
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
 public class CarsInRace {
-    private final List<Car> cars;
+    private List<Car> cars;
+
+    public CarsInRace() {
+        cars = new ArrayList<>();
+    }
 
     public CarsInRace(String carsNameString) {
         String[] carsNameArray = carsNameString.split(",");
         cars = Arrays.stream(carsNameArray).map((carName) -> new Car(carName)).collect(Collectors.toList());
     }
 
-    public void areCarsNameCollect() {
-        cars.forEach(Car::isCarNameCollect);
-        throw new IllegalArgumentException("차 이름은 5자 이하입니다");
+    public boolean areCarsNameCollect() {
+        try {
+            cars.forEach(Car::isCarNameCollect);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+
+            return false;
+        }
+
+        return true;
     }
 
     public void allCarGoOrStop() {
@@ -38,5 +50,16 @@ public class CarsInRace {
     private int winnerMoveDistance() {
         Comparator<Car> comparatorByMoveDistance = Comparator.comparingInt(Car::getMoveDistance);
         return cars.stream().max(comparatorByMoveDistance).orElse(new Car("empty")).getMoveDistance();
+    }
+
+    public void enterCarsName() {
+        do
+        {
+            System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+            String carsNameString = readLine();
+
+            String[] carsNameArray = carsNameString.split(",");
+            cars = Arrays.stream(carsNameArray).map((carName) -> new Car(carName)).collect(Collectors.toList());
+        } while(!areCarsNameCollect());
     }
 }
