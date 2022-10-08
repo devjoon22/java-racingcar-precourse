@@ -1,6 +1,7 @@
 package racingcar;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,5 +25,18 @@ public class CarsInRace {
             car.goOrStop(CarStatus.stopOrGo());
             System.out.println(car.printStatusString());
         }));
+    }
+
+    public String winnerString() {
+        int maxMoveDistance = winnerMoveDistance();
+        String winnerString = cars.stream().filter((car -> car.getMoveDistance() == maxMoveDistance))
+                .map(car -> car.getCarName()).collect(Collectors.joining(","));
+
+        return winnerString;
+    }
+
+    private int winnerMoveDistance() {
+        Comparator<Car> comparatorByMoveDistance = Comparator.comparingInt(Car::getMoveDistance);
+        return cars.stream().max(comparatorByMoveDistance).orElse(new Car("empty")).getMoveDistance();
     }
 }

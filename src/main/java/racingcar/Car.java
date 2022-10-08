@@ -24,10 +24,6 @@ public class Car {
         }
     }
 
-    public int getMoveDistance() {
-        return moveDistance;
-    }
-
     private String MoveDistanceString() {
         String moveDistanceString = "";
 
@@ -39,5 +35,13 @@ public class Car {
 
     public String printStatusString() {
         return carName + ":" + MoveDistanceString();
+    }
+
+    public int getMoveDistance() {
+        return moveDistance;
+    }
+
+    public String getCarName() {
+        return carName;
     }
 }

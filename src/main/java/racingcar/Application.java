@@ -13,9 +13,12 @@ public class Application {
         String progressNumberString = readLine();
         ProgressStep progressStep = new ProgressStep(progressNumberString);
 
+        System.out.println("실행결과");
         for (int i = 0; i < progressStep.progressStopToInt(); i++) {
             carsInRace.allCarGoOrStop();
             System.out.println();
         }
+
+        System.out.println("최종 우승자:" + carsInRace.winnerString());
     }
 }
