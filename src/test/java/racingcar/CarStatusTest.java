@@ -1,12 +1,11 @@
 package racingcar;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.provider.EnumSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class StopOrGoTest {
+public class CarStatusTest {
     @Test
     void stopOrGoTest() {
         int carStatusNum = CarStatus.stopOrGo().ordinal();
