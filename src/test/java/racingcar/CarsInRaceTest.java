@@ -11,7 +11,7 @@ public class CarsInRaceTest {
     void enterCarsNameInRaceTest() {
         CarsInRace cars = new CarsInRace("abcdef,abcdef");
 
-        assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {cars.areCarsNameCollect();});
+        assertThat(cars.areCarsNameCollect()).isFalse();
     }
 
     @Test
