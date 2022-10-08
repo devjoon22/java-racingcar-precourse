@@ -14,4 +14,8 @@ public class ProgressStep {
 
         return true;
     }
+
+    public int progressStopToInt() {
+        return Integer.parseInt(stepNumberString);
+    }
 }

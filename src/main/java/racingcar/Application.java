@@ -12,5 +12,10 @@ public class Application {
         System.out.println("시도할 회수는 몇회인가요?");
         String progressNumberString = readLine();
         ProgressStep progressStep = new ProgressStep(progressNumberString);
+
+        for (int i = 0; i < progressStep.progressStopToInt(); i++) {
+            carsInRace.allCarGoOrStop();
+            System.out.println();
+        }
     }
 }

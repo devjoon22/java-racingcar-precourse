@@ -18,4 +18,11 @@ public class CarsInRace {
         cars.forEach(Car::isCarNameCollect);
         throw new IllegalArgumentException("차 이름은 5자 이하입니다");
     }
+
+    public void allCarGoOrStop() {
+        cars.stream().forEach((car -> {
+            car.goOrStop(CarStatus.stopOrGo());
+            System.out.println(car.printStatusString());
+        }));
+    }
 }

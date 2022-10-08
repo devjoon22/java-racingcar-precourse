@@ -18,4 +18,14 @@ public class CarTest {
         newCar.goOrStop(CarStatus.GO);
         assertThat(newCar.getMoveDistance()).isEqualTo(1);
     }
+
+    @Test
+    void printStatusTest() {
+        Car newCar = new Car("myCar");
+        while (newCar.getMoveDistance() <=  0) {
+            newCar.goOrStop(CarStatus.GO);
+        }
+
+        assertThat(newCar.printStatusString()).contains("myCar", ":", "-");
+    }
 }
