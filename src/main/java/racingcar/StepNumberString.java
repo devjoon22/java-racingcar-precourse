@@ -7,7 +7,7 @@ public class StepNumberString {
         this.stepNumberString = stepNumberString;
     }
 
-    public boolean isCollectStepNumber() throws NumberFormatException{
+    public boolean isCollectStepNumber() throws NumberFormatException {
         Integer.parseInt(stepNumberString);
 
         return true;

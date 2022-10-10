@@ -22,7 +22,7 @@ public class CarTest {
     @Test
     void printStatusTest() {
         Car newCar = new Car("myCar");
-        while (newCar.getMoveDistance() <=  0) {
+        while (newCar.getMoveDistance() <= 0) {
             newCar.goOrStop(CarStatus.GO);
         }
 

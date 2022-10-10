@@ -13,7 +13,7 @@ public enum CarStatus {
     public static CarStatus stopOrGo() {
         int randomNum = pickNumberInRange(MIN_NUM, MAX_NUM);
 
-        return (randomNum >= DESIDE_NUM) ?  GO : STOP;
+        return (randomNum >= DESIDE_NUM) ? GO : STOP;
     }
 }
 

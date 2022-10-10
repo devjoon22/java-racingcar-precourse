@@ -16,6 +16,8 @@ public class ProgressStepTest {
     @Test
     void 잘못된_시도횟수_입력시_익셉션_test() {
         ProgressStep progressStep = new ProgressStep(new StepNumberString("a"));
-        assertThatExceptionOfType(NumberFormatException.class).isThrownBy(() -> {progressStep.isCollectStepNumber();});
+        assertThatExceptionOfType(NumberFormatException.class).isThrownBy(() -> {
+            progressStep.isCollectStepNumber();
+        });
     }
 }

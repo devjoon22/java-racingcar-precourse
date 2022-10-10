@@ -11,7 +11,7 @@ public class CarName {
         return carName;
     }
 
-    public int carNameLength(){
+    public int carNameLength() {
         return carName.length();
     }
 

@@ -10,14 +10,14 @@ public class Car {
     }
 
     public boolean isCarNameCollect() {
-        if (carName.carNameLength() > 5 ) {
+        if (carName.carNameLength() > 5) {
             throw new IllegalArgumentException("[ERROR] 차 이름은 5자 이하입니다");
         }
 
         return true;
     }
 
-    public void goOrStop (CarStatus carStatus) {
+    public void goOrStop(CarStatus carStatus) {
         if (carStatus == CarStatus.GO) {
             moveDistance.increaseDistance();
         }

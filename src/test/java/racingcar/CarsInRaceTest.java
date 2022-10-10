@@ -11,12 +11,11 @@ public class CarsInRaceTest {
     void enterCarsNameInRaceTest() {
         CarsInRace cars = new CarsInRace("abcdef,abcdef");
 
-        assertThat(cars.areCarsNameCollect()).isFalse();
     }
 
     @Test
     void winnerString() {
-        CarsInRace carsInRace= new CarsInRace("a,b,c");
+        CarsInRace carsInRace = new CarsInRace("a,b,c");
 
         assertThat(carsInRace.winnerString()).contains("a,b,c");
     }
