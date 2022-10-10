@@ -35,7 +35,7 @@ public class Car {
     }
 
     public String printStatusString() {
-        return carName + " : " + MoveDistanceString();
+        return carName.getCarName() + " : " + MoveDistanceString();
     }
 
     public int getMoveDistance() {
