@@ -1,17 +1,15 @@
 package racingcar;
 
-import static camp.nextstep.edu.missionutils.Console.readLine;
-
 public class ProgressStep {
-    String stepNumberString;
+    StepNumberString stepNumberString;
 
-    public ProgressStep(String stepNumberString) {
+    public ProgressStep(StepNumberString stepNumberString) {
         this.stepNumberString = stepNumberString;
     }
 
     public boolean isCollectStepNumber() {
         try {
-            Integer.parseInt(stepNumberString);
+            stepNumberString.isCollectStepNumber();
         } catch (NumberFormatException e) {
             throw new NumberFormatException("[ERROR] 시도 횟수는 숫자여야 한다.");
         }
@@ -20,6 +18,6 @@ public class ProgressStep {
     }
 
     public int progressStopToInt() {
-        return Integer.parseInt(stepNumberString);
+        return stepNumberString.getStepNumber();
     }
 }

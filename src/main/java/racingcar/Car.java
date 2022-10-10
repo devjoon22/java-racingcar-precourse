@@ -3,15 +3,16 @@ package racingcar;
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
 public class Car {
-    private String carName;
-    private int moveDistance;
+    private CarName carName;
+    private MoveDistance moveDistance;
 
     public Car(String carName) {
-        this.carName = carName;
+        this.carName = new CarName(carName);
+        moveDistance = new MoveDistance();
     }
 
     public boolean isCarNameCollect() {
-        if (carName.length() > 5 ) {
+        if (carName.carNameLength() > 5 ) {
             throw new IllegalArgumentException("[ERROR] 차 이름은 5자 이하입니다");
         }
 
@@ -20,14 +21,14 @@ public class Car {
 
     void goOrStop (CarStatus carStatus) {
         if (carStatus == CarStatus.GO) {
-            moveDistance++;
+            moveDistance.increaseDistance();
         }
     }
 
     private String MoveDistanceString() {
         String moveDistanceString = "";
 
-        for (int i = 0; i < moveDistance; i++) {
+        for (int i = 0; i < moveDistance.getMoveDistance(); i++) {
             moveDistanceString += "-";
         }
         return moveDistanceString;
@@ -38,10 +39,10 @@ public class Car {
     }
 
     public int getMoveDistance() {
-        return moveDistance;
+        return moveDistance.getMoveDistance();
     }
 
     public String getCarName() {
-        return carName;
+        return carName.getCarName();
     }
 }
