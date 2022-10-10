@@ -1,7 +1,5 @@
 package racingcar;
 
-import static camp.nextstep.edu.missionutils.Console.readLine;
-
 public class Car {
     private CarName carName;
     private MoveDistance moveDistance;
@@ -19,7 +17,7 @@ public class Car {
         return true;
     }
 
-    void goOrStop (CarStatus carStatus) {
+    public void goOrStop (CarStatus carStatus) {
         if (carStatus == CarStatus.GO) {
             moveDistance.increaseDistance();
         }
@@ -27,7 +25,6 @@ public class Car {
 
     private String MoveDistanceString() {
         String moveDistanceString = "";
-
         for (int i = 0; i < moveDistance.getMoveDistance(); i++) {
             moveDistanceString += "-";
         }

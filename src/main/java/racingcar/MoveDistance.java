@@ -14,4 +14,8 @@ public class MoveDistance {
     public void increaseDistance() {
         moveDistance++;
     }
+
+    public void saveIfParameterValueGreater(int parameterInt) {
+        if (moveDistance < parameterInt) moveDistance = parameterInt;
+    }
 }
